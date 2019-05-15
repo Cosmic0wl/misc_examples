@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var galvina = "Meow";
+		document.write(galvina);
+
+		var name = "Valentina";
+
+		var length = name.substring(0, 4);
+		document.write("<hr>");
+		document.write(length);
+		document.write("<hr>");
+
+		var password = "qwerty";
+
+		console.log(Boolean(password == "qwertz"));
+		console.log(Boolean(password == "qwerty"));
+
+		var num = 75;
+
+		console.log(String(num));
+
+		console.log(typeof 75);
+
+
+		console.log("I\'m baby");
+
+		console.log("a\te\ts\tt\th\te\tt\ti\tc");
+		console.log("wow this is cool".length);
+
+		var favWord = "Moonlight";
+		console.log(favWord.indexOf('l'));
+		console.log(favWord.indexOf('o'));
+
+		var favArray = new Array();
+		favArray = favWord.split('l');
+		console.log(favArray);
+
+		var b = 'I am a JavaScript developer.';
+		var temp = new  Array();
+		temp = b.split(' ');
+		console.log(temp);
+		console.log(temp.length);
+		
+		var array = ["red", "blue", "green", "pink"];
+		document.write("My favourite color is " + array[1]);
+
+		console.log(array);
+		console.log(array.pop());
+		console.log(array);
+		console.log(array.push("purple"));
+		console.log(array);
+		console.log(array.unshift("yellow"));
+		console.log(array);
+		console.log(array.shift("yellow"));
+		console.log(array);
+		console.log(array.length);
+		console.log(array.sort());
+
+		console.log(array.slice(1,2));
+		console.log(array.slice(2));
+		console.log(array.slice(0,3));
+
+		//tic tac toe
+
+		ticTacToe = [
+		['1', '2', '3'], 
+		[ '4', '5', '6'], 
+		['7', '8', '9']
+		];
+
+		console.log(ticTacToe[1][2]);
+
+	</script>
+</body>
+</html>
