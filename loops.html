@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // For Loop
+    var text = "";
+    for (i = 0; i < 5; i++) {
+        text += "The index is " + i + "<br>";
+    }
+    document.write(text);
+
+    // While Loop
+
+    var i = 1;
+    var msg = '';
+    while (i < 10) {
+        msg = i + ' x 5 = ' + (i * 5) + '<br/>';
+        i++;
+        document.write(msg);
+    }
+
+    var j = 1;
+    var mesg = '';
+    while (j < 4) {
+        mesg = " This line comes from iteration N " + j + "<br/>";
+        j++;
+        document.write("This is iteration the N" + (j - 1) + mesg);
+    }
+
+    // Do... While Loop
+
+    var k = 1;
+    var msg = '';
+    do {
+        msg = k + ' x 5 = ' + (k * 5) + '<br />';
+        k++;
+        document.write(msg);
+    } while (k < 1);
+    </script>
+</body>
+
+</html>
