@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <h2>Ricette</h2>
+       
+    </div>
+    <script>
+    function pastaRecipeConstructor(name, pastaType, topping_1, topping_2) {
+        this.name = name;
+        this.pastaType = pastaType;
+        this.topping_1 = topping_1;
+        this.topping_2 = topping_2;
+    }
+    // Pasta con tonno
+    var pastaTonno = new pastaRecipeConstructor('Pasta con tonno', 'penne', 'tonno', 'olive');
+    
+    var paragraph = document.createElement("p");
+    var node = document.createTextNode("Ricetta " + pastaTonno.name + ": " + pastaTonno.pastaType + ", " + pastaTonno.topping_1 + ", " + pastaTonno.topping_2);
+    paragraph.appendChild(node);
+    var element = document.getElementById("demo");
+    element.appendChild(paragraph);
+    // Spaghetti alla carbonara
+    var pastaCarbonara = new pastaRecipeConstructor('Carbonara', 'spaghetti', 'uova', 'grana');
+    var newp = document.createElement("p");
+    var newNode = document.createTextNode("Ricetta " + pastaCarbonara.name + ": " + pastaCarbonara.pastaType + ", " + pastaCarbonara.topping_1 + ", " + pastaCarbonara.topping_2);
+    newp.appendChild(newNode);
+    var newElement = document.getElementById("demo");
+    newElement.appendChild(newp);
+
+    /*create newp element with new object
+    function createNewParagraph(obj) {
+        var paragraph = document.createElement("p");
+        var textNode = document.createTextNode(obj.name);
+        document.getElementById("demo").appendChild(textNode);
+
+    }*/
+    </script>
+</body>
+
+</html>
