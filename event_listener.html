@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#demo {
+			padding: 10px;
+			height: 300px;
+			width: 300px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo"> 
+	</div>
+
+    <script>
+    	var elementNode = document.getElementById('demo');
+    	var colorsArray = ["blue", "red", "lightgreen", "yellow", "pink"];
+    	var position = 0;
+      function changeBackGroundColor() {
+      		elementNode.style.backgroundColor = colorsArray[position];
+      		position++;
+      		if (position>colorsArray.length-1) {
+      			position=0;
+      		}
+      }
+
+      elementNode.addEventListener('click', changeBackGroundColor, false);
+    </script>
+	
+</body>
+</html>
