@@ -1,0 +1,18 @@
+var songs = [
+{
+    "title": "Basket Case",
+    "artist": "Green Day"
+},
+{
+    "title": "No Scrubs",
+    "artist": "TLC"
+},
+{
+    "title": "Don't Speak",
+    "artist": "No Doubt"
+},
+{
+	"title": "The Sign",
+	"artist": "Ace of Base"
+}];
+

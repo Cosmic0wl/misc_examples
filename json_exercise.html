@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="container">
+		<h2>Gothic Books</h2>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</div>
+	<script>
+		var books = [ {
+			"title": "Dracula",
+			"author": "Bram Stoker",
+			"year": "1897"
+		},
+		{
+			"title": "Carmilla",
+			"author": "Sheridan Le Fanu",
+			"year": "1872"
+		},
+		{
+			"title": "The Picture of Dorian Gray",
+			"author": "Oscar Wilde",
+			"year": "1890"
+		}
+		];
+		for (i=0; i < books.length; i++) {
+			document.getElementsByTagName("li")[i].innerHTML=books[i].title + ", " + books[i].author + ", " + books[i].year;
+		};
+		
+	</script>
+</body>
+</html>
