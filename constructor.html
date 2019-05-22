@@ -28,11 +28,14 @@
     element.appendChild(paragraph);
     // Spaghetti alla carbonara
     var pastaCarbonara = new pastaRecipeConstructor('Carbonara', 'spaghetti', 'uova', 'grana');
-    var newp = document.createElement("p");
-    var newNode = document.createTextNode("Ricetta " + pastaCarbonara.name + ": " + pastaCarbonara.pastaType + ", " + pastaCarbonara.topping_1 + ", " + pastaCarbonara.topping_2);
-    newp.appendChild(newNode);
-    var newElement = document.getElementById("demo");
-    newElement.appendChild(newp);
+    var paragraph = document.createElement("p");
+    var node = document.createTextNode("Ricetta " + pastaCarbonara.name + ": " + pastaCarbonara.pastaType + ", " + pastaCarbonara.topping_1 + ", " + pastaCarbonara.topping_2);
+    paragraph.appendChild(node);
+    var element = document.getElementById("demo");
+    element.appendChild(paragraph);
+    //Spaghetti aglio e olio
+    var pastaAglioeOlio = new pastaRecipeConstructor('Aglio e Olio', 'spaghetti', 'aglio', 'olio');
+    
 
     /*create newp element with new object
     function createNewParagraph(obj) {
