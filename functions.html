@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>The product of 5*10 is:</p>
+    <p id="line"></p>
+    <p>The product of 9*10 is:</p>
+    <p id="other"></p>
+    <p>Class element:</p>
+    <p class="paragraph"></p>
+    <p class="paragraph"></p>
+    <script>
+    function multiplyMe(p1, p2) {
+        return p1 * p2;
+    }
+
+    var product = multiplyMe(9, 10);
+    console.log(product);
+
+    document.getElementById("line").innerHTML = multiplyMe(5, 10);
+    document.getElementById("other").innerHTML = product;
+    document.getElementsByClassName("paragraph")[0].innerHTML = multiplyMe(5, 10); // getElementsByClassName needs a number bc you would have multiple classes
+    document.getElementsByClassName("paragraph")[1].innerHTML = multiplyMe(8, 10);
+
+    document.getElementById("line").style.color = "pink";
+
+    // Pounds to Kilograms 
+
+    function poundsToKilogram(pound) {
+        return pound / 2.205
+    }
+
+    console.log(poundsToKilogram(8));
+
+    // Fortune Telling 
+
+    function tellFortune(numChildren, partnerName, location, jobTitle) {
+        return "You will be a " + jobTitle + " in " + location + ", and married to " + partnerName + " with " + numChildren + " kids."
+    }
+
+    console.log(tellFortune("two", "Daniel", "Vienna", "FS Web Developer"));
+
+
+    // Lifetime Supply Calculator
+
+    function calculateSupply(age, amountPerDay) {
+        const result = age * amountPerDay;
+        return "You will need " + result + " bananas to last you until the ripe old age of " + age
+    }
+
+    console.log(calculateSupply(90, 2));
+
+
+    // Geometrizer
+
+    function calcCircumfrence(radius) {
+        var pi = 3.14;
+        var circ = radius * pi;
+        return "The circumference is " + circ
+    }
+
+    function calcArea(radius) {
+        var pi = 3.14;
+        var area = (radius * radius) * pi;
+        return "The area is " + area
+    }
+    console.log(calcCircumfrence(5));
+    console.log(calcArea(3));
+
+    // Banana calculator
+
+    function bananaCalculator(bananasPerDay, days, people) {
+        var weekly = (bananasPerDay * days) * people;
+        return weekly
+    }
+
+    console.log(bananaCalculator(2, 5, 2));
+    </script>
+</body>
+
+</html>
