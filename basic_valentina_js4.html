@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#demo {
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+	</div>
+	<script>
+		// Create new paragraph
+		function createNewParagraph(result) {
+        var paragraph = document.createElement("p");
+        var textNode = document.createTextNode(result);
+        paragraph.appendChild(textNode);
+        document.getElementById("demo").appendChild(paragraph);
+    }
+		// Age Calculator
+		function ageCalculator(birthYear){
+			var thisYear = new Date().getFullYear();
+			var age = thisYear - birthYear;
+			return age;
+		}
+		createNewParagraph((ageCalculator(1992)));
+	
+
+		// Truncate 
+
+		function truncate(string, numOfChar){
+			var newString = string.substr(0, numOfChar);
+			return newString;
+		}
+
+		createNewParagraph((truncate("I am a hero from World of Warcraft", 12)));
+
+		// Personal Information
+
+		function personalInformation(name, surname, age, descr){
+			return "Hi I am " + name + " I am " + age + " years old and I am a " + descr;
+		}
+
+		createNewParagraph(personalInformation("Valentina", "Panetta", "27", "future programmer"));
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    body {
+    	font-family: Arial, sans-serif;
+    }
+    #container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button {
+    	background-color: blue;
+    	color: white;
+    }
+
+    .player {
+        width: 50%;
+        padding: 20px;
+        border: 3px solid blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    #player1, #player2 {
+    	text-transform: uppercase;
+    	padding-right: 10px;
+    	color: pink;
+    }
+
+    .para {
+        padding: 5px;
+        border: 3px solid blue;
+        padding: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box">
+            <div class="player">
+                <p id="player1"></p>
+                <button class="button">ROLL</button>
+            </div>
+            <div class="player">
+                <p id="player2"></p>
+                <button class="button">ROLL</button>
+            </div>
+        </div>
+        <div id="box">
+            <div id="result1">
+                <p id="numberOne0" class="para"></p>
+                <p id="numberTwo0" class="para"></p>
+                <p id="numberThree0" class="para"></p>
+                <p id="sum0" class="para"></p>
+            </div>
+            <div id="result2">
+                <p id="numberOne1" class="para"></p>
+                <p id="numberTwo1" class="para"></p>
+                <p id="numberThree1" class="para"></p>
+                <p id="sum1" class="para"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+    var player1 = prompt("Enter Your Name");
+    var player2 = prompt("Enter Your Name");
+    document.getElementById("player1").innerHTML = player1
+    document.getElementById("player2").innerHTML = player2;
+
+    // function roll dice
+    var btn = document.getElementsByClassName("button");
+    var results = [];
+
+    function rollDice(i) {
+        var num1 = Math.floor(Math.random() * 10)
+        var num2 = Math.floor(Math.random() * 10)
+        var num3 = Math.floor(Math.random() * 10)
+        var sum = num1 + num2 + num3;
+        document.getElementById("numberOne" + i).innerHTML = num1;
+        document.getElementById("numberTwo" + i).innerHTML = num2;
+        document.getElementById("numberThree" + i).innerHTML = num3;
+        document.getElementById("sum" + i).innerHTML = sum;
+        results[i] = sum;
+        console.log(results);
+        if (results[0] > results[1]) {
+            document.getElementById("sum0").style.borderColor = "lightgreen";
+            document.getElementById("sum1").style.borderColor = "red";
+        } else if (results[1] > results[0]) {
+            document.getElementById("sum1").style.borderColor = "lightgreen";
+            document.getElementById("sum0").style.borderColor = "red";
+        } else {
+            document.getElementById("sum0").style.borderColor = "yellow";
+            document.getElementById("sum1").style.borderColor = "yellow";
+        }
+    }
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function() { rollDice(i) }, false);
+    }
+    </script>
+</body>
+
+</html>

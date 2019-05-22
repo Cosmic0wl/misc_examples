@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /* color palette:
+		dark cerulean : #003580;
+		white: #FFFFFF;
+		light cerulean: #E9F0FA; */
+
+    #hidden {
+        display: none;
+    }
+
+    #demo {
+    	width: 80%;
+    	margin: 0 auto;
+    }
+
+    body {
+    	background-color: #E9F0FA;
+    }
+
+    button {
+    	background-color: #003580;
+    	color: #FFFFFF;
+    	border-radius: 10px;
+    	padding: 10px;
+    }
+
+    p {
+    	color: #003580;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <p id="par1"></p>
+        <p id="hidden">"Sorry, no free room for <span id="n"></span> nights".</p>
+    </div>
+    <script>
+    function HotelConstructor(name, rooms, nights) {
+        this.name = name;
+        this.booked = Math.floor(Math.random() * 10);
+        this.nights = nights;
+        this.rooms = rooms;
+        this.checkAvailability = function() {
+            var result = this.rooms - this.booked;
+            if (result > this.nights) {
+                document.getElementById("hidden").style.display = "block";
+                document.getElementById("n").innerHTML = this.nights;
+            } else {
+                var btn = document.createElement("BUTTON");
+                var btnText = document.createTextNode("Please Book");
+                btn.appendChild(btnText);
+                document.getElementById("demo").appendChild(btn);
+            }
+        }
+    }
+    var nights = prompt("how many nights?");
+    var Queen = new HotelConstructor("Queen", 20, nights);
+    var King = new HotelConstructor("King", 10, nights);
+    var Knight = new HotelConstructor("Knight", 8, nights);
+    Queen.checkAvailability();
+    </script>
+</body>
+
+</html>
