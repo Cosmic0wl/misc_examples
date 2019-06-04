@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+    #box {
+        width: 200px;
+        height: 200px;
+    }
+
+    #cowboy {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img id="cowboy" src="https://www.flosocial.com.au/wp-content/uploads/Sad-Cowboy-Emoji-FloSocial.png">
+    </div>
+    <script>
+    bounce()
+
+    function bounce() {
+        $('#cowboy').on('click', function() {
+        	$(this).animate({
+                left: '270px',
+                top: '380px'
+            }, 2000, 'linear')
+            .animate({
+                left: '540px',
+                top: '190px'
+            }, 2000, 'linear')
+            .animate({
+                left: '270px',
+                top: '0px'
+            }, 2000, 'linear')
+            .animate({
+                left: '0px',
+                top: '190px'
+            }, 2000, 'linear')
+        });
+
+    }
+    </script>
+</body>
+
+</html>

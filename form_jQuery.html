@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <input type="text" value="First Input Box" />
+    <br/>
+    <input type="text" value="Second Input Box" />
+    <br/>
+    <input type="text" value="Third Input Box" />
+    <br/>
+    <input type="text" value="Fourth Input Box" />
+    <br/>
+    <input type="text" value="Fifth Input Box" />
+    <button>Press Here</button>
+    <script type="text/javascript" language="javascript">
+	
+    $("button").click(function() {
+    	var content = $("input:eq(0)").val();
+        $("input:eq(4)").val(content);
+    });
+    </script>
+</body>
+</html>

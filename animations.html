@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+    #container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #pink {
+        background-color: pink;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    #fuchsia {
+    	background-color: fuchsia;
+    }
+
+    #royalblue {
+    	background-color: royalblue;
+    }
+
+    .box {
+        height: 200px;
+        width: 200px;
+        margin: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="pink" class="box"></div>
+        <div id="blue" class="box"></div>
+        <div id="fuchsia" class="box"></div>
+        <div id="royalblue" class="box"></div>
+
+    </div>
+    <script>
+    $(document).ready(function() {
+        var one = $("#pink");
+        $.fx.speeds["very-fast"] = 1000;
+        one.hide(3000).show("very-fast");
+        var two = $("#blue");
+        two.slideUp(1000).slideDown(1000);
+        var three = $("#fuchsia");
+        three.fadeOut(3000).fadeIn(3000);
+        // animate()
+        $('#royalblue').on('click', function () {
+        	$(this).animate({
+        		width: '+=100',
+        		height: '+=100'
+        	}, 500, function() {
+        		$(this).fadeOut(4000);
+        	});
+        });
+
+    });
+    </script>
+</body>
+
+</html>
