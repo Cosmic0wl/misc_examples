@@ -33,6 +33,12 @@
     .royalblue {
         background-color: royalblue;
     }
+
+    div {
+        width: 500px;
+        padding: 10px 5px;
+        margin-top: 5px;
+    }
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
@@ -40,10 +46,12 @@
 <body>
     <h1>Hello World</h1>
     <button>click here</button>
+    <div>element</div>
     <script>
     var colorsArray = ["pink", "teal", "fuchsia", "aqua", "purple", "royalblue"];
     var position = 0;
     $(document).ready(function() {
+        $("div").css("background-color", "pink");
         $("button").click(function() {
             $(this).addClass(colorsArray[position]).removeClass(colorsArray[position - 1]);
             position++;
